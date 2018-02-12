@@ -1,7 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { graphql } from 'react-apollo'
-import { PLANET_QUERY } from './queries'
+import { Link } from 'react-router-dom'
 
 const Root = styled.div`
   text-align: center;
@@ -15,27 +14,26 @@ const Header = styled.header`
 const Welcome = styled.h1`
   font-size: 1.5em;
 `
-const Intro = styled.p`
+const NavLinks = styled.ul`
   font-size: large;
+  display: flex;
+  flex-direction: column;
 `
-type Planet = {
-  name: string
-}
-type Response = {
-  planet: Planet
-}
 
-const withPlanet = graphql<Response>(PLANET_QUERY)
-
-export default withPlanet(({data}) => {
-  return data.loading || !data.planet ? null : (
+export default () => {
+  return (
     <Root>
       <Header>
-        <Welcome>welcome {data.planet.name}</Welcome>
+        <Welcome>welcome</Welcome>
       </Header>
-      <Intro>
-        To get started, edit <code>src/App.tsx</code> and save to reload.
-      </Intro>
+      <NavLinks>
+        <Link to="/planets">Planets</Link>
+        <Link to="/films">Films</Link>
+        <Link to="/people">People</Link>
+        <Link to="/species">Species</Link>
+        <Link to="/vehicles">Vehicles</Link>
+        <Link to="/starships">Starships</Link>
+      </NavLinks>
     </Root>
   )
-})
+}
