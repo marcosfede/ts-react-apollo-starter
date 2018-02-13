@@ -1,30 +1,30 @@
 import * as React from 'react'
-import { graphql } from 'react-apollo'
+import { graphql, QueryProps } from 'react-apollo'
 import gql from 'graphql-tag'
+import { allPeopleQuery } from 'api/types'
 
 const PEOPLE_QUERY = gql`
-  query allPeople{
+  query allPeople {
     people {
       name
     }
   }
 `
-
-const People = ({data}: {data: any}) => {
-  if (data.loading) {
-    return <div>loading...</div>
-  }
-  if (data.error) {
-    return <div>error</div>
-  }
-  if (data.people) {
-    return (
-      <ul>
-        {data.people.map((person: any) => <li key={person.name}>{person.name}</li>)}
-      </ul>
-    )
-  }
-  return null
+interface Props {
+  data: allPeopleQuery & QueryProps
 }
 
-export default graphql(PEOPLE_QUERY)(People)
+const People = (props: Props) => {
+  if (props.data.loading) {
+    return <div>loading...</div>
+  }
+  if (props.data.error) {
+    return <div>error</div>
+  }
+  const people = props.data.people
+  return (
+    <ul>{people.map(person => <li key={person.name}>{person.name}</li>)}</ul>
+  )
+}
+
+export default graphql<allPeopleQuery>(PEOPLE_QUERY)(People)
