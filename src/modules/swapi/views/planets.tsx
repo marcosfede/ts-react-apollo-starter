@@ -9,7 +9,7 @@ const PLANETS_QUERY = gql`
     }
   }
 `
-const Planets = ({data}) => {
+const Planets = ({data}: {data: any}) => {
   if (data.loading) {
     return <div>loading...</div>
   }
@@ -19,7 +19,7 @@ const Planets = ({data}) => {
   if (data.planets) {
     return (
       <ul>
-        {data.planets.map(planet => <li key={planet.name}>{planet.name}</li>)}
+        {data.planets.map((planet: any) => <li key={planet.name}>{planet.name}</li>)}
       </ul>
     )
   }

@@ -2,8 +2,8 @@ import * as React from 'react'
 import { Route } from 'react-router-dom'
 import { Home } from '..'
 import { Layout } from '..'
-import Planets from '@modules/swapi/views/planets'
-import People from '@modules/swapi/views/people'
+import Planets from 'modules/swapi/views/planets'
+import People from 'modules/swapi/views/people'
 
 export default () => {
   return (

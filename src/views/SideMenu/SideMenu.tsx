@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Layout, Menu, Icon } from 'antd'
-import './Layout.css'
+
 const antImg = require('../../assets/images/ant.svg')
 const { Sider } = Layout
 

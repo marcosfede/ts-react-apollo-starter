@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Layout, Menu, Icon, Dropdown, Avatar } from 'antd'
-import './Layout.css'
 
 const { Header } = Layout
 

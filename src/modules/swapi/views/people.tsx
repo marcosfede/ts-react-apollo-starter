@@ -9,7 +9,8 @@ const PEOPLE_QUERY = gql`
     }
   }
 `
-const People = ({data}) => {
+
+const People = ({data}: {data: any}) => {
   if (data.loading) {
     return <div>loading...</div>
   }
@@ -19,7 +20,7 @@ const People = ({data}) => {
   if (data.people) {
     return (
       <ul>
-        {data.people.map(person => <li key={person.name}>{person.name}</li>)}
+        {data.people.map((person: any) => <li key={person.name}>{person.name}</li>)}
       </ul>
     )
   }

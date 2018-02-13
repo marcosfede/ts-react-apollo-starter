@@ -27,8 +27,9 @@
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
     "format": "tslint --fix 'src/**/*.+(ts|tsx)'",
-    "schema": "apollo-codegen introspect-schema ./src/graphql/schema.graphql --output ./src/graphql/schema.json",
-    "types": "apollo-codegen generate ./src/**/queries.ts --addTypename --schema ./src/graphql/schema.json --target typescript --output ./src/graphql/__generated__/types.ts"
+    "apollocodegen": "apollo-codegen introspect-schema ./src/api/schema.graphql --output ./src/api/schema.json",
+    "gqlgen": "gql-gen --file ./src/api/schema.json --template typescript --out ./src/graphql-types.d.ts \"./src/**/*.graphql\"",
+    "types": "apollo-codegen generate ./src/modules/**/*.graphql --addTypename --schema ./src/api/schema.json --target typescript --output ./src/api/types.ts"
   },
   "devDependencies": {
     "@types/graphql": "^0.12.3",
@@ -40,6 +41,7 @@
     "@types/react-router": "^4.0.21",
     "@types/react-router-dom": "^4.2.3",
     "@types/webpack-env": "^1.13.5",
+    "graphql-code-generator": "^0.8.14",
     "prettier": "^1.10.2",
     "prettier-tslint": "^0.3.0",
     "typescript": "^2.7.1"

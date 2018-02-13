@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "build/dist",
-    "baseUrl": ".",
-    "paths": {
-		  "@modules/*": ["src/modules/*"],
-		  "@components/*": ["src/components/*"]
-	  },
+    "baseUrl": "src",
     "module": "esnext",
     "target": "es5",
     "lib": ["es6", "dom", "esnext.asynciterable"],
@@ -17,7 +13,7 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true

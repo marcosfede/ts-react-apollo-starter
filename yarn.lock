@@ -28,6 +28,14 @@
   version "0.12.3"
   resolved "https://registry.yarnpkg.com/@types/graphql/-/graphql-0.12.3.tgz#c429585aaa4523135e0ab4e12dec72d2d913946f"
 
+"@types/graphql@^0.9.0":
+  version "0.9.4"
+  resolved "https://registry.yarnpkg.com/@types/graphql/-/graphql-0.9.4.tgz#cdeb6bcbef9b6c584374b81aa7f48ecf3da404fa"
+
+"@types/handlebars@^4.0.33":
+  version "4.0.36"
+  resolved "https://registry.yarnpkg.com/@types/handlebars/-/handlebars-4.0.36.tgz#ff57c77fa1ab6713bb446534ddc4d979707a3a79"
+
 "@types/history@*":
   version "4.6.2"
   resolved "https://registry.yarnpkg.com/@types/history/-/history-4.6.2.tgz#12cfaba693ba20f114ed5765467ff25fdf67ddb0"
@@ -1168,11 +1176,11 @@ combined-stream@^1.0.5, combined-stream@~1.0.5:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@2.14.x, commander@^2.12.1, commander@~2.14.1:
+commander@2.14.x, commander@^2.11.0, commander@^2.12.1, commander@~2.14.1:
   version "2.14.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.14.1.tgz#2235123e37af8ca3c65df45b026dbd357b01b9aa"
 
-common-tags@^1.5.1:
+common-tags@^1.4.0, common-tags@^1.5.1:
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/common-tags/-/common-tags-1.7.2.tgz#24d9768c63d253a56ecff93845b44b4df1d52771"
   dependencies:
@@ -2486,6 +2494,41 @@ graphql-anywhere@^4.1.3:
   dependencies:
     apollo-utilities "^1.0.6"
 
+graphql-code-generator@^0.8.14:
+  version "0.8.14"
+  resolved "https://registry.yarnpkg.com/graphql-code-generator/-/graphql-code-generator-0.8.14.tgz#79eefdf628c020cdd8f85533a7cfd5af2dd433f9"
+  dependencies:
+    commander "^2.11.0"
+    glob "^7.1.2"
+    graphql-codegen-compiler "0.8.14"
+    graphql-codegen-core "0.8.14"
+    graphql-codegen-generators "0.8.14"
+    mkdirp "^0.5.1"
+    request "^2.81.0"
+
+graphql-codegen-compiler@0.8.14:
+  version "0.8.14"
+  resolved "https://registry.yarnpkg.com/graphql-codegen-compiler/-/graphql-codegen-compiler-0.8.14.tgz#9392aa91e2d6a405e436667dd9df2123ad377db6"
+  dependencies:
+    "@types/handlebars" "^4.0.33"
+    change-case "^3.0.1"
+    common-tags "^1.4.0"
+    graphql-codegen-compiler "0.8.14"
+    graphql-codegen-core "0.8.14"
+    graphql-codegen-generators "0.8.14"
+    handlebars "^4.0.10"
+
+graphql-codegen-core@0.8.14:
+  version "0.8.14"
+  resolved "https://registry.yarnpkg.com/graphql-codegen-core/-/graphql-codegen-core-0.8.14.tgz#ded0176bb09f26d550d43474b59a3cfa96ff26c4"
+  dependencies:
+    graphql-tag "^2.4.2"
+    graphql-tools "^1.0.0"
+
+graphql-codegen-generators@0.8.14:
+  version "0.8.14"
+  resolved "https://registry.yarnpkg.com/graphql-codegen-generators/-/graphql-codegen-generators-0.8.14.tgz#126946eceef0788f6c127a220e9a97b6f5c8e402"
+
 graphql-config@^1.1.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/graphql-config/-/graphql-config-1.2.1.tgz#97b4403707db408feb335fbc159651f2a36cb558"
@@ -2510,9 +2553,18 @@ graphql-request@^1.4.0:
   dependencies:
     cross-fetch "1.1.1"
 
-graphql-tag@^2.7.3:
+graphql-tag@^2.4.2, graphql-tag@^2.7.3:
   version "2.7.3"
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.7.3.tgz#5040112a1b4623285ef017c252276f0dea37f03f"
+
+graphql-tools@^1.0.0:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-1.2.3.tgz#079bf4d157e46c0a0bae9fec117e0eea6e03ba2c"
+  dependencies:
+    deprecated-decorator "^0.1.6"
+    uuid "^3.0.1"
+  optionalDependencies:
+    "@types/graphql" "^0.9.0"
 
 graphql-tools@^2.20.2:
   version "2.20.2"
@@ -2553,7 +2605,7 @@ handle-thing@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/handle-thing/-/handle-thing-1.2.5.tgz#fd7aad726bf1a5fd16dfc29b2f7a6601d27139c4"
 
-handlebars@^4.0.3:
+handlebars@^4.0.10, handlebars@^4.0.3:
   version "4.0.11"
   resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.0.11.tgz#630a35dfe0294bc281edae6ffc5d329fc7982dcc"
   dependencies:
@@ -5694,7 +5746,7 @@ request@2.81.0:
     tunnel-agent "^0.6.0"
     uuid "^3.0.0"
 
-request@^2.79.0:
+request@^2.79.0, request@^2.81.0:
   version "2.83.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.83.0.tgz#ca0b65da02ed62935887808e6f510381034e3356"
   dependencies:
@@ -6718,7 +6770,7 @@ uuid@^2.0.2:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
 
-uuid@^3.0.0, uuid@^3.1.0:
+uuid@^3.0.0, uuid@^3.0.1, uuid@^3.1.0:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.2.1.tgz#12c528bb9d58d0b9265d9a2f6f0fe8be17ff1f14"
 
