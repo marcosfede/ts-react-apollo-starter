@@ -2,18 +2,18 @@ const endpoint = 'https://swapi.co/api/'
 const toJSON = (res: any) => res.json()
 
 const people = () =>
-  fetch(`${endpoint}people`)
-    .then((data: any) => data.results)
+  fetch(`${endpoint}people/`)
     .then(toJSON)
+    .then((data: any) => data.results)
     .catch(console.error)
 const person = (root: any, { id }: { id: number }) =>
   fetch(`${endpoint}people/${id}`)
     .then(toJSON)
     .catch(console.error)
 const planets = () =>
-  fetch(`${endpoint}planets`)
-    .then((data: any) => data.results)
+  fetch(`${endpoint}planets/`)
     .then(toJSON)
+    .then((data: any) => data.results)
     .catch(console.error)
 const planet = (root: any, { id }: { id: number }) =>
   fetch(`${endpoint}planets/${id}`)

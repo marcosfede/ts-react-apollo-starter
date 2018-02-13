@@ -1,6 +1,6 @@
 import { ApolloClient } from 'apollo-client'
 import { InMemoryCache } from 'apollo-cache-inmemory'
-import schema from './graphql'
+import schema from './api'
 import { SchemaLink } from 'apollo-link-schema'
 
 // import { createHttpLink } from 'apollo-link-http'

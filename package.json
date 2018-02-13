@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.2.1",
     "apollo-cache-inmemory": "^1.1.7",
     "apollo-client": "^2.2.3",
     "apollo-codegen": "^0.18.3",
@@ -11,6 +12,7 @@
     "graphql-tag": "^2.7.3",
     "graphql-tools": "^2.20.2",
     "normalize.css": "^8.0.0",
+    "ramda": "^0.25.0",
     "react": "^16.2.0",
     "react-apollo": "^2.0.4",
     "react-dom": "^16.2.0",
